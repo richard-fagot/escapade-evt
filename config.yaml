@@ -1,0 +1,75 @@
+# Configuration de l'affiche mensuelle — L'Escapade
+# Toutes les distances sont en mm, les tailles de police en points (pt).
+
+affiche:
+  titre: "Évènements"
+  sous_titre: "DU MOIS"
+  # Le mois affiché dans la pastille est déduit des dates du fichier Excel.
+  pied:
+    - "L'Escapade"
+    - "Contact: Guillaume au 06.32.02.65.07"
+    - "Mail: guillaume.castaing@mouvement-rural.org"
+
+page:
+  largeur_mm: 210
+  hauteur_mm: 297
+  fond: "#FFFFFF"
+  fond_image: "fond.png"   # image pleine page (A4), chemin relatif au config
+  fond_dpi: 150        # rééchantillonne le fond embarqué (300 = qualité source)
+  fond_qualite: 85   # optionnel : convertit le fond en JPEG (plus léger,
+  #                    # à réserver aux fonds sans transparence)
+
+# Polices par catégorie.
+#   famille : nom fontconfig (ex. "Baloo 2", "DejaVu Sans", "Liberation Sans")
+#   taille_pt : taille en points
+#   style : normal | italique
+#   graisse : normal | semibold | bold | extrabold
+#   couleur : hex
+#   echelle_verticale : étirement vertical des glyphes (optionnel, défaut 1.0 ;
+#     ex. 1.15 = +15 % de hauteur, les interlignes suivent)
+polices:
+  titre:      { famille: "Cy Grotesk", taille_pt: 36, style: normal,   graisse: extrabold, couleur: "#111111", echelle_verticale: 1.15 }
+  sous_titre: { famille: "Futura", taille_pt: 30, style: normal,   graisse: semibold,  couleur: "#333333" }
+  mois:       { famille: "Cy Grotesk", taille_pt: 16, style: italique, graisse: extrabold, couleur: "#111111", echelle_verticale: 1.15 }
+  jour:       { famille: "Cy Grotesk", taille_pt: 13, style: normal,   graisse: extrabold, couleur: "#111111", echelle_verticale: 1.15 }
+  evenement:  { famille: "Cy Grotesk", taille_pt: 12, style: normal,   graisse: bold,      couleur: "#111111", echelle_verticale: 1.15 }
+  heure:      { famille: "Futura", taille_pt: 12,  style: normal,   graisse: semibold,  couleur: "#111111", echelle_verticale: 1.15 }
+  prix:       { famille: "Cy Grotesk", taille_pt: 13, style: normal,   graisse: extrabold, couleur: "#8B2FC9", echelle_verticale: 1.15 }
+  pied:       { famille: "Cy Grotesk", taille_pt: 9,  style: normal,   graisse: normal,      couleur: "#111111", echelle_verticale: 1.30 }
+
+cases:
+  largeur_mm: 92
+  marge_gauche_mm: 8          # bord gauche des cases de gauche
+  marge_droite_mm: 8          # bord droit des cases de droite
+  rembourrage_mm: 4.5         # marge intérieure
+  rayon_mm: 6                 # arrondi des coins
+  fond: "#FFFFFF"
+  ombre: true
+  ecart_min_mm: 5             # espace minimal entre deux cases d'une colonne,
+                              # aussi décalage minimal de la colonne droite
+                              # sous la première case gauche
+  # ecart_max_mm: 40          # optionnel : plafonne l'écart de la colonne
+  #                           # gauche quand le mois est peu chargé
+  interligne: 1.15            # multiplicateur de hauteur de ligne
+
+# Bande verticale réservée aux cases
+zone_cases:
+  haut_mm: 46
+  bas_mm: 262
+
+pied_de_page:
+  haut_mm: 268
+
+# Pastille du mois (en haut à droite)
+pastille_mois:
+  fond: "#F0A830"
+  marge_droite_mm: 44   # laisse la place au badge L'ESCAPADE du fond
+  y_mm: 21
+
+decor:
+  actif: false          # formes SVG inutiles quand fond_image est défini
+  couleurs: ["#45C4E9", "#F0A830", "#2E7FC1"]
+
+# Images optionnelles (logos, décorations) : chemin PNG/JPG + position + largeur
+# images:
+#   - { chemin: "logos/caf.png", x_mm: 160, y_mm: 270, largeur_mm: 25 }
