@@ -57,23 +57,22 @@ première feuille du classeur).
 
 ## Polices
 
-Les polices de l'affiche d'origine (Cy Grotesk Grand Dark et Futura Condensed)
-sont commerciales : elles ne peuvent pas être redistribuées dans ce dépôt. Le
-projet utilise à la place des polices libres (licence SIL OFL, voir
-`polices/*-OFL.txt`), générées en graisses statiques depuis Google Fonts :
+Polices libres (licence SIL OFL, voir `polices/*-OFL.txt`), issues de Google Fonts :
 
-- **Archivo Expanded** (Regular, ExtraBold, Black) à la place de Cy Grotesk ;
-- **Jost** (Medium, SemiBold), une Futura libre, à la place de Futura.
+- **Bangers** (style bande dessinée, en capitales) : titre, mois, jours,
+  événements et prix ;
+- **Dosis** (ronde et condensée, graisses Medium, SemiBold et Bold) : heures et
+  pied de page.
 
-Pour utiliser une autre police, y compris Cy Grotesk/Futura si vous en avez
-la licence : copier son fichier `.ttf` ou `.otf` dans `polices/` et indiquer
+Pour utiliser une autre police, par exemple Cy Grotesk ou Futura si vous
+en avez la licence : copier son fichier `.ttf` ou `.otf` dans `polices/` et indiquer
 son chemin dans `config.yaml` (`polices → <catégorie> → fichier`).
 
 Pour regénérer une graisse depuis une police variable :
 
 ```bash
 pip install fonttools
-fonttools varLib.instancer "Archivo[wdth,wght].ttf" wdth=125 wght=900 --update-name-table -o polices/Archivo-Expanded-Black.ttf
+fonttools varLib.instancer "Dosis[wght].ttf" wght=600 --update-name-table -o polices/Dosis-SemiBold.ttf
 ```
 
 ## Configuration (config.yaml)

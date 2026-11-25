@@ -26,17 +26,17 @@ page:
 #   couleur : hex
 #   echelle_verticale : étirement vertical des glyphes (optionnel, défaut 1.0 ;
 #     ex. 1.15 = +15 % de hauteur, les interlignes suivent)
-# Pour utiliser d'autres polices (ex. Cy Grotesk, Futura), déposez leurs
+# Pour utiliser d'autres polices, déposez leurs
 # fichiers .ttf/.otf dans polices/ et changez simplement le chemin ici.
 polices:
-  titre:      { fichier: "polices/Archivo-Expanded-Black.ttf",     taille_pt: 36, style: normal,   couleur: "#111111", echelle_verticale: 1.15 }
-  sous_titre: { fichier: "polices/Jost-SemiBold.ttf",              taille_pt: 30, style: normal,   couleur: "#333333" }
-  mois:       { fichier: "polices/Archivo-Expanded-Black.ttf",     taille_pt: 16, style: italique, couleur: "#111111", echelle_verticale: 1.15 }
-  jour:       { fichier: "polices/Archivo-Expanded-Black.ttf",     taille_pt: 13, style: normal,   couleur: "#111111", echelle_verticale: 1.15 }
-  evenement:  { fichier: "polices/Archivo-Expanded-ExtraBold.ttf", taille_pt: 12, style: normal,   couleur: "#111111", echelle_verticale: 1.15 }
-  heure:      { fichier: "polices/Jost-Medium.ttf",                taille_pt: 12, style: normal,   couleur: "#111111", echelle_verticale: 1.15 }
-  prix:       { fichier: "polices/Archivo-Expanded-Black.ttf",     taille_pt: 13, style: normal,   couleur: "#8B2FC9", echelle_verticale: 1.15 }
-  pied:       { fichier: "polices/Archivo-Expanded-Regular.ttf",   taille_pt: 9,  style: normal,   couleur: "#111111", echelle_verticale: 1.30 }
+  titre:      { fichier: "polices/Bangers-Regular.ttf", taille_pt: 50, style: normal, couleur: "#111111" }
+  sous_titre: { fichier: "polices/Bangers-Regular.ttf", taille_pt: 32, style: normal, couleur: "#333333" }
+  mois:       { fichier: "polices/Bangers-Regular.ttf", taille_pt: 22, style: normal, couleur: "#111111" }
+  jour:       { fichier: "polices/Bangers-Regular.ttf", taille_pt: 18, style: normal, couleur: "#111111" }
+  evenement:  { fichier: "polices/Bangers-Regular.ttf", taille_pt: 15, style: normal, couleur: "#111111" }
+  heure:      { fichier: "polices/Dosis-SemiBold.ttf",  taille_pt: 13, style: normal, couleur: "#111111" }
+  prix:       { fichier: "polices/Bangers-Regular.ttf", taille_pt: 18, style: normal, couleur: "#8B2FC9" }
+  pied:       { fichier: "polices/Dosis-SemiBold.ttf",  taille_pt: 10, style: normal, couleur: "#111111", echelle_verticale: 1.10 }
 
 cases:
   largeur_mm: 92
