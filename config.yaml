@@ -14,28 +14,29 @@ page:
   largeur_mm: 210
   hauteur_mm: 297
   fond: "#FFFFFF"
-  fond_image: "fond.png"   # image pleine page (A4), chemin relatif au config
+  fond_image: "fond.png"   # image pleine page (A4), chemin relatif à index.html
   fond_dpi: 150        # rééchantillonne le fond embarqué (300 = qualité source)
   fond_qualite: 85   # optionnel : convertit le fond en JPEG (plus léger,
   #                    # à réserver aux fonds sans transparence)
 
 # Polices par catégorie.
-#   famille : nom fontconfig (ex. "Baloo 2", "DejaVu Sans", "Liberation Sans")
+#   fichier : chemin du fichier TTF ou OTF, relatif à index.html (dossier polices/)
 #   taille_pt : taille en points
-#   style : normal | italique
-#   graisse : normal | semibold | bold | extrabold
+#   style : normal | italique (italique simulé par inclinaison)
 #   couleur : hex
 #   echelle_verticale : étirement vertical des glyphes (optionnel, défaut 1.0 ;
 #     ex. 1.15 = +15 % de hauteur, les interlignes suivent)
+# Pour utiliser d'autres polices (ex. Cy Grotesk, Futura), déposez leurs
+# fichiers .ttf/.otf dans polices/ et changez simplement le chemin ici.
 polices:
-  titre:      { famille: "Cy Grotesk", taille_pt: 36, style: normal,   graisse: extrabold, couleur: "#111111", echelle_verticale: 1.15 }
-  sous_titre: { famille: "Futura", taille_pt: 30, style: normal,   graisse: semibold,  couleur: "#333333" }
-  mois:       { famille: "Cy Grotesk", taille_pt: 16, style: italique, graisse: extrabold, couleur: "#111111", echelle_verticale: 1.15 }
-  jour:       { famille: "Cy Grotesk", taille_pt: 13, style: normal,   graisse: extrabold, couleur: "#111111", echelle_verticale: 1.15 }
-  evenement:  { famille: "Cy Grotesk", taille_pt: 12, style: normal,   graisse: bold,      couleur: "#111111", echelle_verticale: 1.15 }
-  heure:      { famille: "Futura", taille_pt: 12,  style: normal,   graisse: semibold,  couleur: "#111111", echelle_verticale: 1.15 }
-  prix:       { famille: "Cy Grotesk", taille_pt: 13, style: normal,   graisse: extrabold, couleur: "#8B2FC9", echelle_verticale: 1.15 }
-  pied:       { famille: "Cy Grotesk", taille_pt: 9,  style: normal,   graisse: normal,      couleur: "#111111", echelle_verticale: 1.30 }
+  titre:      { fichier: "polices/Archivo-Expanded-Black.ttf",     taille_pt: 36, style: normal,   couleur: "#111111", echelle_verticale: 1.15 }
+  sous_titre: { fichier: "polices/Jost-SemiBold.ttf",              taille_pt: 30, style: normal,   couleur: "#333333" }
+  mois:       { fichier: "polices/Archivo-Expanded-Black.ttf",     taille_pt: 16, style: italique, couleur: "#111111", echelle_verticale: 1.15 }
+  jour:       { fichier: "polices/Archivo-Expanded-Black.ttf",     taille_pt: 13, style: normal,   couleur: "#111111", echelle_verticale: 1.15 }
+  evenement:  { fichier: "polices/Archivo-Expanded-ExtraBold.ttf", taille_pt: 12, style: normal,   couleur: "#111111", echelle_verticale: 1.15 }
+  heure:      { fichier: "polices/Jost-Medium.ttf",                taille_pt: 12, style: normal,   couleur: "#111111", echelle_verticale: 1.15 }
+  prix:       { fichier: "polices/Archivo-Expanded-Black.ttf",     taille_pt: 13, style: normal,   couleur: "#8B2FC9", echelle_verticale: 1.15 }
+  pied:       { fichier: "polices/Archivo-Expanded-Regular.ttf",   taille_pt: 9,  style: normal,   couleur: "#111111", echelle_verticale: 1.30 }
 
 cases:
   largeur_mm: 92
@@ -67,7 +68,7 @@ pastille_mois:
   y_mm: 21
 
 decor:
-  actif: false          # formes SVG inutiles quand fond_image est défini
+  actif: false          # formes colorées inutiles quand fond_image est défini
   couleurs: ["#45C4E9", "#F0A830", "#2E7FC1"]
 
 # Images optionnelles (logos, décorations) : chemin PNG/JPG + position + largeur

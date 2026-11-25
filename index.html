@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Affiche L'Escapade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Affiche du mois <span>L'Escapade</span></h1>
+    <p class="intro">Glissez le fichier Excel des événements ci-dessous : l'affiche PDF est
+      générée et téléchargée automatiquement.</p>
+
+    <label id="zone" class="zone" tabindex="0">
+      <input id="fichier" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" hidden>
+      <strong>Déposez le fichier .xlsx ici</strong>
+      <span>ou cliquez pour le choisir</span>
+    </label>
+
+    <div id="etat" class="etat" role="status" aria-live="polite"></div>
+    <ul id="avertissements" class="avertissements"></ul>
+    <p id="actions" class="actions" hidden>
+      <a id="telecharger" class="bouton" href="#">Télécharger à nouveau</a>
+    </p>
+    <iframe id="apercu" class="apercu" title="Aperçu de l'affiche" hidden></iframe>
+
+    <details class="aide">
+      <summary>Format du fichier Excel</summary>
+      <p>Colonnes, dans cet ordre, avec une ligne d'en-tête :
+        <code>Date | Evenement | Debut | Fin | Prix</code></p>
+      <ul>
+        <li>Une ligne par événement ; les lignes de même date sont regroupées dans une case.</li>
+        <li><code>Debut</code>/<code>Fin</code> : heures Excel (<code>14:00</code>) ou texte libre
+          (<code>14H</code>). Une fin à <code>00:00</code> s'affiche <code>MINUIT</code>.</li>
+        <li><code>Prix</code> : nombre (10 → 10€, 7,5 → 7,50€) ou vide.</li>
+        <li>Le mois de la pastille est déduit des dates.</li>
+      </ul>
+      <p>Mise en page, textes, couleurs et polices se règlent dans <code>config.yaml</code>.</p>
+    </details>
+  </main>
+
+  <script src="lib/fflate.min.js"></script>
+  <script src="lib/js-yaml.min.js"></script>
+  <script src="lib/pdf-lib.min.js"></script>
+  <script src="lib/fontkit.umd.min.js"></script>
+  <script src="js/excel.js"></script>
+  <script src="js/affiche.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
